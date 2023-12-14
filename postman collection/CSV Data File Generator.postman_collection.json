@@ -1,0 +1,163 @@
+{
+	"info": {
+		"_postman_id": "da56c409-2060-443b-9034-9ef868b2a869",
+		"name": "CSV Data File Generator",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24574472"
+	},
+	"item": [
+		{
+			"name": "Generate CSV File",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"fileName\": \"CommentsData\",\r\n    \"fields\": {\r\n        \"post_id\": {\r\n            \"type\": \"Row Number\"\r\n        },\r\n        \"user_id\": {\r\n            \"type\": \"Row Number\"\r\n        },\r\n        \"comment\": {\r\n            \"type\": \"Words\",\r\n            \"min\": 3,\r\n            \"max\": 5\r\n        }\r\n    },\r\n    \"numRows\": 40000\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{localhost}}/api/generate-csv-file?apiKey=20844ad0",
+					"host": [
+						"{{localhost}}"
+					],
+					"path": [
+						"api",
+						"generate-csv-file"
+					],
+					"query": [
+						{
+							"key": "apiKey",
+							"value": "20844ad0"
+						}
+					]
+				},
+				"description": "This API will generate the CSV file using Mockaroo API key."
+			},
+			"response": [
+				{
+					"name": "Generate CSV File",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"fileName\": \"CommentsData\",\r\n    \"fields\": {\r\n        \"post_id\": {\r\n            \"type\": \"Row Number\"\r\n        },\r\n        \"user_id\": {\r\n            \"type\": \"Row Number\"\r\n        },\r\n        \"comment\": {\r\n            \"type\": \"Words\",\r\n            \"min\": 3,\r\n            \"max\": 5\r\n        }\r\n    },\r\n    \"numRows\": 40000\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{localhost}}/api/generate-csv-file?apiKey=20844ad0",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"api",
+								"generate-csv-file"
+							],
+							"query": [
+								{
+									"key": "apiKey",
+									"value": "20844ad0"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "46"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"2e-tbHAmLDZ0eW9AjCyUQNutxGi2ZY\""
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 08 Aug 2023 06:29:30 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"CSV file generated successfully!\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Download CSV file",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{localhost}}/api/download-csv-file?fileName=UserProfile",
+					"host": [
+						"{{localhost}}"
+					],
+					"path": [
+						"api",
+						"download-csv-file"
+					],
+					"query": [
+						{
+							"key": "fileName",
+							"value": "UserProfile"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "localhost",
+			"value": "http://localhost:3000",
+			"type": "string"
+		}
+	]
+}
